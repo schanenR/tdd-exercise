@@ -54,7 +54,7 @@ describe 'Blackjack Score' do
 
   it 'raises an ArgumentError for invalid cards' do
 
-    hand = ["11", "Ace"]
+    hand = [11, "Ace"]
 
     expect {
       hand
