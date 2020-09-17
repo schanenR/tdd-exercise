@@ -8,6 +8,7 @@ def blackjack_score(hand)
   ace_count = 0
   valid_hand = nil
   match_count = 0
+
   hand.each do |card|
     VALID_CARDS.each do |deck_option|
       if card == deck_option
@@ -33,12 +34,14 @@ def blackjack_score(hand)
       end
     end
 
-    if (ace_count * 11 + sum) < 22
-      sum += (ace_count * 11)
-    elsif (((ace_count - 1) * 11) + 1) + sum < 22
-      sum += ((ace_count - 1) * 11) + 1
-    else
-      sum += ace_count * 1
+    if ace_count > 0
+      if (ace_count * 11 + sum) < 22
+        sum += (ace_count * 11)
+      elsif (((ace_count - 1) * 11) + 1) + sum < 22
+        sum += ((ace_count - 1) * 11) + 1
+      else
+        sum += ace_count * 1
+      end
     end
 
     if sum < 22

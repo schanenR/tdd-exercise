@@ -64,7 +64,10 @@ describe 'Blackjack Score' do
 
   it 'raises an ArgumentError for scores over 21' do
 
-    hand = ["Queen", "King", 3]
+    hand = [9,9,9]
+    #  puts blackjack_score(hand)
+    # puts hand.length
+    # p hand
 
     expect {
       blackjack_score(hand)
