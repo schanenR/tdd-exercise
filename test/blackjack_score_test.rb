@@ -57,17 +57,17 @@ describe 'Blackjack Score' do
     hand = [11, "Ace"]
 
     expect {
-      hand
+      blackjack_score(hand)
     }.must_raise ArgumentError
 
   end
 
   it 'raises an ArgumentError for scores over 21' do
 
-    hand = ["Queen", "King", "Jack"]
+    hand = ["Queen", "King", 3]
 
     expect {
-      hand
+      blackjack_score(hand)
     }.must_raise ArgumentError
 
   end
